@@ -1,0 +1,42 @@
+Always should assume our code will fail reminding that none is perfect.
+Error should be Logged to server and not to console.caz its not the users to know the error. Its us the developers want to know the error.
+When we caught an error we can add much more details to that error and leading that the developer have handled the error rather than not handling.
+Types of error:
+			coercion error,
+			Data type error,
+			communication error.
+Communication error:
+			url must be valid
+			server response status
+			no network connection
+			server response content
+server response status: not only 200 is valid status code. Also, 304 and 500 can also be considered.
+NO network connection:  error will be thrown when ther is no network connection. that should also be handled.
+
+eg:
+				var req= new XMLHttpRequest();
+				try{
+				req.open("get","index.htm",true);
+				}	
+				catch(ex){
+				//handles NETWORK ERROR.
+				}								
+
+				req.onreadystatechange = function(){
+				if(req.readyState == 4){
+				try{
+					if((req.status>=200 && req.status <300) || req.status ==304){
+
+					}
+					else{
+					//handles error other that 200 and 304
+					}
+				}
+				catch(ex){
+				//handles NETWORK ERROR
+				}
+				}
+				}
+Can throw our own errors using throw new Error("my error");
+
+
