@@ -1,0 +1,213 @@
+//9 th problem
+var students = [
+ {"name": "Siddharth Abhimanyu", "age": 21},
+ { "name": "Malar", "age": 25},
+ {"name": "Maari","age": 18},
+ {"name": "Bhallala Deva","age": 17},
+ {"name": "Baahubali","age": 16},
+ {"name": "AAK chandran","age": 23},   
+ {"name":"Gabbar Singh","age": 33},
+ {"name": "Mogambo","age": 53},
+ {"name": "Munnabhai","age": 40},
+ {"name": "Sher Khan","age": 20},
+ {"name": "Chulbul Pandey","age": 19},
+ {"name": "Anthony","age": 28},
+ {"name": "Devdas","age": 56} 
+ ];
+ var arr=[];
+function returnMinors(students)
+{
+	for(var i in students)
+		if(students[i]["age"]<20){
+			arr.push(students[i]["name"]);
+		}
+		return arr;
+}
+console.log(returnMinors(students));
+
+
+
+//8th problem
+var securityQuestions = [
+ {
+ "question": "What was your first pet’s name?",
+ "expectedAnswer": "FlufferNutter"
+ },
+ {
+ "question": "What was the model year of your first car?",
+ "expectedAnswer": "1985"
+ },
+ {
+ "question": "What city were you born in?",
+ "expectedAnswer": "NYC"
+ }
+]
+function chksecurityQuestions(securityQuestions,ques, ans) {
+
+ for(var i in securityQuestions ) {
+if(securityQuestions[i]["question"] == ques && securityQuestions[i]["expectedAnswer"] == ans)
+return true;
+else return false;
+
+ }
+  
+}
+var ques = "What was your first pet’s name?";
+var ans  =  "DufferNutter";
+var status = chksecurityQuestions(securityQuestions, ques, ans);
+console.log(status);
+
+
+//6 th problem
+
+var arr= [
+			[
+				["firstName", "Vasanth"], ["lastName", "Raja"], ["age", 24], ["role", "JSWizard"]
+			], 
+			[
+				["firstName", "Sri"], ["lastName", "Devi"] , ["age", 28], ["role", "Coder"]
+			]
+		];
+function transformEmployeeData(arr) {
+ var tranformEmployeeList = {};var arr1=[];
+ 
+for(var i=0;i<arr.length;i++){
+	for(var j=0;j<arr[i].length;j++)
+	{
+ tranformEmployeeList[arr[i][j][0]] = arr[i][j][1];
+}arr1.push(tranformEmployeeList);
+}
+ 
+ return arr1;
+}
+console.log(transformEmployeeData(arr));
+
+
+//5 th problem
+
+var arr = [["make", "Ford"], ["model", "Mustang"], ["year", 1964]];
+function fromListToObject(arr) {
+ var newObject = {};
+ for(var i in arr)
+ newObject[arr[i][0]] = arr[i][1];
+ return newObject;
+}
+
+console.log(fromListToObject(arr));
+
+//4 th problem
+var arr = ["GUVI", "I", "am", "a geek"];
+var arr1={};
+function transformFirstAndLast(arr) {
+ arr1[arr[0]] = arr[(arr.length-1)]
+ return arr1;
+}
+console.log(transformFirstAndLast(arr));
+
+//3 th problem
+var obj = {"name": "ISRO", "age": 35, "role": "Scientist"};
+var arr1=[];
+function convertListToObject(obj) {
+ for(var i in obj){var arr =[];
+arr[i]=obj[i];arr1.push(arr);
+}
+return arr1;
+}
+console.log(convertListToObject(obj));
+
+//2 th problem
+var obj = {"name" : "RajiniKanth", "age" : 33, "hasPets" : false};
+var newArr=[];
+function printAllValues(obj) {
+ for(var i in obj){
+
+ 	newArr.push(i);
+ }
+}
+printAllValues(obj);
+console.log(newArr);
+
+//1 th problem
+var obj = {"name" : "RajiniKanth", "age" : 33, "hasPets" : false};
+var newArr=[];
+function printAllValues(obj) {
+ for(var i in obj){
+
+ 	newArr.push(obj[i]);
+ }
+}
+printAllValues(obj);
+console.log(newArr);
+
+
+//Car  problem
+var myCar = {
+ "make": "Bugatti",
+ "model": "Bugatti La Voiture Noire",
+ "year": "2019",
+ "accidents": [
+ {
+ "date": "3/15/2019",
+ "damage_points": 5000,
+ "atFaultForAccident": true
+ },
+ {
+ "date": "7/4/2022",
+ "damage_points": 2200,
+ "atFaultForAccident": true
+ },
+ {
+ "date": "6/22/2021",
+ "damage_points": 7900,
+ "atFaultForAccident": true
+ }
+ ]
+}
+for(var i=0;i<myCar["accidents"].length;i++)
+myCar["accidents"][i]["atFaultForAccident"] = false;
+console.log(myCar);
+for(var i=0;i<myCar["accidents"].length;i++)
+console.log("dates of accident: "+ myCar["accidents"][i]["date"]);
+
+
+
+//Fluffy Problem
+var cat = {
+ "name": "Fluffy",
+ "activities": ["play", "eat cat food"],
+ "catFriends": [
+ {
+ "name": "bar",
+ "activities": ["be grumpy", "eat bread omblet"],
+ "weight": 8,
+ "furcolor": "white"
+ }, 
+ {
+ "name": "foo",
+ "activities": ["sleep", "pre-sleep naps"],
+ "weight": 3
+ }
+ ]
+}
+console.log(cat);
+cat.height = 20;cat.weight = 15;
+
+cat.name = "Fluffyy";
+console.log(cat);
+console.log("Cat Friends Activites:");
+for(var i = 0; i<(cat["catFriends"].length); i++)
+console.log(cat["catFriends"][i]["activities"]);
+console.log("Cat Friends Names:");
+for(var i = 0; i<(cat["catFriends"].length); i++)
+console.log(cat["catFriends"][i]["name"]);
+console.log("Cat Friends Total Weight:"); var totalWeight=0;
+for(var i = 0; i<(cat["catFriends"].length); i++)
+	totalWeight = totalWeight + cat["catFriends"][i]["weight"];
+console.log(totalWeight);
+console.log("extra added Activities");
+
+cat["catFriends"][0]["activities"].push("go out","noisy");
+cat["catFriends"][1]["activities"].push("crying","silent");
+
+cat["catFriends"][0]["furcolor"]= "black";
+console.log(cat);
