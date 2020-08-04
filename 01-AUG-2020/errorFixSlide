@@ -1,0 +1,81 @@
+
+
+
+
+//ERROR 1= uncaught type error:cannot read property
+//with error caught:
+function test(t) {      
+  if (t !== undefined) {      
+        
+        return t.tt;       
+  }
+}
+var a;    
+console.log(test(a)); 
+
+//without error caught:
+function test(t) {      
+      return t.tt;       
+}
+var a;   
+console.log(test(a)); 
+
+
+//ERROR 2= TyperError : ‘undefined’ is not an object (evaluating)
+//same like uncaught type error. "TyperError : ‘undefined’"  will appear as error in safari.error occured becuase property of undefined object is not valid
+
+var test;
+if((test !== undefined && test.length===0)
+console.log("empty");
+
+
+//ERROR 3 : NULL is not an object
+CASE 1-occurs when accessing the property of NULL object.
+FIX-1: if(test!=null)
+CASE 2-when we use <script> tag at top in the html file,this will end up in accessing the DOM nodes even before the full HTML gets loaded.
+hence NULL will be thrown as error. to fix this addEventListener can be added.
+<script>
+  function init() {
+    var myButton = document.getElementById("myButton");
+    var myTextfield = document.getElementById("myTextfield");
+    myButton.onclick = function() {
+      var userName = myTextfield.value;
+    }
+  }
+  document.addEventListener('readystatechange', function() {
+    if (document.readyState === "complete") {
+      init();
+    }
+  });
+</script>
+<form>
+  <input type="text" id="myTextfield" placeholder="Type your name" />
+  <input type="button" id="myButton" value="Go" />
+</form>
+
+//ERROR 4: UNKNOWN SCRIPT ERROR
+when we didnt caught error by ourself then the error will goes to window.onerror. and if we try to contact with cross domain with that
+error then unknown script error will occur.
+
+ERROR-FIX: set Access-Control-Allow-Origin value.
+
+//ERROR 5 : TypeError: Object doesn’t support property
+
+This is an error occurs when calling an undefined method. This is error in the IE Developer Console.
+
+//ERROR 6 : 7. Uncaught RangeError
+
+Case 1: when recursive call not terminated
+Case 2: out of range eg: Number.toExponential(digits) and Number.toFixed(digits) 
+		accept digits from 0 to 100, and Number.toPrecision(digits) accepts digits from 1 to 100.
+
+//ERROR 7: TypeError: Cannot read property ‘length’
+
+This is an error that occurs in Chrome because of reading length property for an undefined variable
+
+//ERROR 8: Uncaught TypeError: Cannot set property
+
+when we try to ser proprty of undefined variable.
+
+
+
