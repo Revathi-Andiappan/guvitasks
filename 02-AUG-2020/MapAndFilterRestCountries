@@ -32,3 +32,8 @@ data.forEach((flag)=> {console.log(flag["name"]);console.log(flag["capital"]);co
 data.filter((flag)=> {console.log(flag["name"]);console.log(flag["capital"]);console.log(flag["flag"]);})
 
 }
+//TOTAL POPULATION OF COUNTRIES IN ASIA
+
+var populationOfAsia = 
+data.filter((checkAsia) => {return checkAsia["region"] == "Asia"}).reduce((totalval,data1)=>{return totalval+ + data1["population"]},0)	
+console.log(populationOfAsia);
