@@ -1,0 +1,9 @@
+WINDOW VS SCREEN VS DOCUMENT:
+
+What is the difference between window, screen, and document in Javascript?
+
+Window is the global object.once the browser is loaded window is the first thing that will get initialized. and Window holds the property of Screen and document. i.e. window.screen, window.document
+
+Screen has the details about individuals screen property such as  width, height of the browser's screen.
+
+Document is the root of the DOM Tree. if we want to access any nodes in DOM tree then, (Document.getElementById) can be used to access the DOM tree.
