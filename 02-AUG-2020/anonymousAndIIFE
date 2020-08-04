@@ -1,0 +1,104 @@
+//ODD NUMBERS
+
+Anonymous:
+var arr = [2,3,4,7,6];
+var result = function(arr){
+
+	for (var i in arr){
+		if(arr[i]%2!=0){
+			console.log(arr[i]);
+		}
+	}
+}
+result(arr);
+
+IIFE:
+var arr = [2,3,4,7,6];
+(function(arr){
+
+	for (var i in arr){
+		if(arr[i]%2!=0){
+			console.log(arr[i]);
+		}
+	}
+})(arr);
+
+//TITLE CAPS
+
+ANONYMOUS:
+var arr = ["rev","guvi","javascript"];
+var result = function(arr){
+
+	for (var i in arr){
+		{
+		arr[i]= arr[i].charAt(0).toUpperCase()+arr[i].slice(1);
+		console.log(arr[i]);
+		}
+	}
+}
+result(arr);
+
+IIFE:
+var arr = ["rev","guvi","javascript"];
+(function(arr){
+
+	for (var i in arr){
+		{
+		arr[i]= arr[i].charAt(0).toUpperCase()+arr[i].slice(1);
+		console.log(arr[i]);
+		}
+	}
+})(arr);
+
+//SUM OF ALL NUMBERS
+
+ANONYMOUS:
+var arr = [2,3,4,7,6]; 
+var result = function(arr){
+var sum=0;
+	for (var i in arr){
+		sum = sum + arr[i];
+	}
+	return sum;
+}
+console.log(result(arr));
+
+IIFE:
+var arr = [2,3,4,7,6]; 
+console.log((function(arr){
+var sum=0;
+	for (var i in arr){
+		sum = sum + arr[i];
+	}
+	return sum;
+})(arr));
+
+//PALINDROME
+
+ANONYMOUS:
+var arr = ["rer","guvi","javascript"];
+var result = function(arr){
+
+	for (var i in arr){
+		{
+		var str1 = arr[i].split('').reverse().toString().replace(/,/g,'');;
+		console.log(arr[i],str1);
+		console.log(arr[i]==str1);
+		}
+	}
+}
+result(arr);
+
+IIFE:
+var arr = ["rer","guvi","javascript"];
+(function(arr){
+
+	for (var i in arr){
+		{
+		var str1 = arr[i].split('').reverse().toString().replace(/,/g,'');;
+		console.log(arr[i],str1);
+		console.log(arr[i]==str1);
+		}
+	}
+})(arr);
+
